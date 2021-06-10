@@ -1,24 +1,24 @@
 # Input Section
-num_cities = int(input("Number of cities: "))   # Enter number of cities
+num_cities = int(input("Number of cities: "))   # Enter number of cities #
 i = 1
 a = 1
-num_hotspot = int(input("Number of hotspots: "))   # Enter number of hotspots
+num_hotspot = int(input("Number of hotspots: "))   # Enter number of hotspots #
 hotspot_cities = []
 
-print("Enter Hotspot cities: ")     # Loop for entering hotspot cities
+print("Enter Hotspot cities: ")     # Loop for entering hotspot cities #
 while i <= num_hotspot:
     a = input(": ")
     i = i+1
     hotspot_cities.append(int(a))
 
-path_list = []       # Loop for entering paths
+path_list = []       # Loop for entering paths #
 for j in range(num_cities - 1):
     print('Enter', j+1, 'path')
     p1 = int(input('From: '))
     p2 = int(input('To: '))
     path_list.append([p1, p2])
 
-atmost_dist = int(input("Enter max. distance: "))   # Atmost distance
+atmost_dist = int(input("Enter max. distance: "))   # Atmost distance #
 
 # Algorithm
 if atmost_dist == 0:
@@ -36,7 +36,7 @@ for k in hotspot_cities:
     x4 = [k]
 
     max_dist = atmost_dist
-    for path in path_list:      # Loop to find adjacent cities to the hotspots
+    for path in path_list:      # Loop to find adjacent cities to the hotspots #
         if k in path:
             if path.index(k) == 0:
                 x1.append(path[1])
@@ -46,7 +46,7 @@ for k in hotspot_cities:
     for n in x1:
         x4.append(n)
 
-    while (max_dist-1) != 0:      # Loop to find possible epicenters if atmost distance travel is more than 1 unit.
+    while (max_dist-1) != 0:      # Loop to find possible epicenters if atmost distance travel is more than 1 unit #
         for m in x1:
             for path in path_list:
                 if m in path:
@@ -63,8 +63,8 @@ for k in hotspot_cities:
         x2 = []
         max_dist = max_dist - 1
     x3.append(x4)
-    # x4 is list of possible epicenter for current hotspot in loop and x3 is possible epicenter for all hotspots
+    # x4 is list of possible epicenter for current hotspot in loop and x3 is possible epicenter for all hotspots #
 
-result = list(set.intersection(*map(set, x3)))      # To find common possible epicenters for all hotspots
+result = list(set.intersection(*map(set, x3)))      # To find common possible epicenters for all hotspots #
 print("There can be possibly", len(result), "epicenters")
 print("Named", result)
