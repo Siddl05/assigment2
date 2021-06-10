@@ -1,5 +1,5 @@
 # Python code for Beckend Assigment2 with result image#
-=> Number of cities: 5
+=> Number of cities: 5/n
 => Number of hotspots: 2
 => Enter Hotspot cities: 
   : 2
